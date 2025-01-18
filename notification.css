@@ -1,0 +1,275 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f4f6;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E4B7A0;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Main Content Styling */
+main {
+  flex: 1;
+  padding: 40px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#notifications {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Ticket Card Styling */
+.ticket-card {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  align-items: center;
+  background-color: #ffffff;
+  border-left: 5px solid #4CAF50;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.5s ease-in-out;
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+}
+
+.ticket-card:hover {
+  transform: translateY(-5px);
+}
+
+.ticket-card.active {
+  background-color: #d4f8e8;
+  border-left: 5px solid #6dd185;
+  display: flex;
+  justify-content: space-between;
+  color: green;
+}
+
+.ticket-card.expired {
+  background-color: #f8d7da;
+  border-left: 5px solid #e45361;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(189, 54, 54);
+}
+
+.ticket-card img {
+  width: 250px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+/* Ticket Details */
+.ticket-details {
+  padding: 20px;
+  /* display: flex; */
+  flex: 1;
+  gap: 50px;
+}
+
+.ticket-details h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.ticket-details p {
+  margin-bottom: 8px;
+  font-size: 1em;
+  color: #555;
+}
+
+.ticket-details .expired-label {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.ticket-details .active-label {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* Ticket Actions */
+.ticket-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.ticket-actions button {
+  background-color: #008CBA;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-actions button:hover {
+  background-color: #005f6a;
+}
+
+.ticket-actions button:focus {
+  outline: none;
+}
+
+/* Button Container */
+.button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.button-container button {
+  background-color: #e89870;
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  width: 220px;
+  font-weight: bold;
+}
+
+.button-container button:hover {
+  background-color: #ea8a5a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ticket-card {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+  }
+
+  .ticket-card img {
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+  }
+
+  .ticket-details h2 {
+    font-size: 1.4em;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  header .backhome {
+    font-size: 16px;
+    padding: 10px 30px;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+}
+
+/* Back to Packages Button */
+.backhome {
+  text-decoration: none;
+  background-color: #e59e7b;
+  color: white;
+  padding: 10px 50px;
+  border-radius: 10px;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.backhome:hover {
+  background-color: #d66f3b;
+  color: white;
+  padding: 12px 55px;
+  font-size: 34px;
+  border-radius: 12px;
+}
+
+.ticket-status {
+  display: flex;
+  margin: 60px 20px;
+}
+
+.ticket-status span.active {
+  color: #28a745;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.ticket-status span.expired {
+  color: #dc3545;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+
+.ticketsall{
+  display: flex;
+  gap: 150px;
+}

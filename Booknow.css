@@ -1,0 +1,541 @@
+/* Body Styling */
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffcf9d, #fde8f5);
+    color: #6c422c;
+    min-height: 100vh;
+    gap: 5px;
+}
+
+/* Header Styling */
+header {
+    width: 100%;
+    background-color: #E4B7A0;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid rgba(255, 179, 142, 0.3);
+    padding: 20px 0;
+    font-weight: bold;
+}
+
+/* Heading Text Styling */
+header h1 {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 2px;
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Add the word animation effect */
+header h1 span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Keyframe for fading in each word */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay for each word (stagger effect) */
+header h1 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+header h1 span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+header h1 span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+
+/* Main Section Styling */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+/* Package Details Styling */
+.package-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 195, 157, 0.2);
+    /* Light transparent peach */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(108, 66, 44, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-details:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(108, 66, 44, 0.3);
+}
+
+/* Image Styling */
+.Booknow-parentimage {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+    padding: 10px;
+    flex-wrap: wrap;
+    /* Ensure responsiveness */
+}
+
+.Booknow-image {
+    width: 45%;
+    height: 280px;
+    /* Maintain aspect ratio */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(108, 66, 44, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Booknow-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(108, 66, 44, 0.4);
+}
+
+/* Actions Section Styling */
+.actions {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.actions .btn {
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background-color: #ffb38e;
+    /* Warm peach */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(108, 66, 44, 0.3);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.actions .btn:hover {
+    transform: translateY(-3px);
+    background-color: #d88c68;
+    /* Slightly darker shade */
+    box-shadow: 0 8px 20px rgba(168, 108, 76, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Booknow-parentimage {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .actions {
+        gap: 20px;
+    }
+
+    .actions .btn {
+        width: 100%;
+    }
+}
+
+#packageDetails .package-details1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 195, 157, 0.2);
+    /* Light transparent peach */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(108, 66, 44, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.package-details1:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(108, 66, 44, 0.3);
+}
+
+.package-details2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    padding: 15px;
+    width: 100%;
+}
+
+
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffcf9d, #fde8f5);
+    color: #6c422c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for the form */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4a3a2e;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-size: 1rem;
+    color: #4a3a2e;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input:focus,
+select:focus {
+    border-color: #ffb38e;
+    outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #ffb38e;
+    padding: 10px 30px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #d88c68;
+}
+
+#applyCouponBtn {
+    border: none;
+    border-radius: 12px;
+    background-color: #d88c68;
+    color: white;
+    /* font-size: 17px; */
+    padding: 10px 20px;
+}
+
+.coup {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+.pass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.discount,
+.total_price {
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    color: #d88c68;
+}
+
+.passengerforms {
+    display: flex;
+    flex-direction: column;
+    gap: 5px 10px;
+    align-items: center;
+}
+
+.passengerforms1 {
+    display: flex;
+    gap: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.passengerform {
+    background-color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.4s, top 0.4s, opacity 0.4s;
+}
+
+#total-price,
+.t_p {
+    color: green;
+}
+
+.open_passengerform {
+    visibility: visible;
+    opacity: 1;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 100;
+}
+
+
+.phonenumber {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form {
+    padding: 10px 60px;
+    /* width: 100%; */
+}
+
+
+#incrementBtn,
+#decrementBtn {
+    padding: 3px 6px;
+    border: none;
+    /* background-color: transparent; */
+    border-radius: 5px;
+    background-color: #ffb38e;
+    color: white;
+    font-size: 15px;
+}
+
+/* Container for the price section */
+.price-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(255, 195, 157, 0.1);
+    border: 1px solid rgba(255, 179, 142, 0.4);
+    border-radius: 10px;
+    /* margin-bottom: 20px; */
+}
+
+/* Each row in the price section */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    color: #6c422c;
+}
+
+/* Special styling for the Total Price row */
+.price-row.total {
+    font-weight: bold;
+    color: green;
+    border-top: 2px solid rgba(255, 179, 142, 0.4);
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+/* Price values */
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .price-section {
+        padding: 15px;
+    }
+
+    .price-row {
+        font-size: 1rem;
+    }
+}
+
+
+/* Coupons.css */
+.coupon-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.coupon-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.coupon-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.coupon-item {
+    padding: 10px 35px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #915a3c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.coupon-item:hover {
+    background-color: #a52fd3;
+}
+
+.coupon-message {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+/* Container for the package details and terms card */
+.package-details-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    /* Space between the cards */
+    margin: 20px;
+}
+
+/* Style for the Terms and Conditions Card */
+.terms-card {
+    flex: 1;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.terms-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.terms-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.terms-card ul li {
+    margin-bottom: 8px;
+}
+
+.package-details1 {
+    flex: 2;
+    /* Give it more space than the terms card */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+

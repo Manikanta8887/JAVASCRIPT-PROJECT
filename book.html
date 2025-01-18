@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANI TRAVELS</title>
+  <link rel="icon" href="./images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="book.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="./images/logo.png" alt="SANCHARI" class="logo">
+      <h1>MANI TRAVELS</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="./home.html">HOME</a></li>
+        <li><a href="./book.html">BOOK</a></li>
+        <li><a href="./packages.html">PACKAGES</a></li>
+        <li><a href="./contactus.html">CONTACT US</a></li>
+        <li><a href="./gallery.html">GALLERY</a></li>
+      </ul>
+    </nav>
+    <div class="dropdown">
+      <a href="./notification.html"><i class="fa-regular fa-bell"></i></a>
+      <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" class="profile-img" alt="User Avatar"
+          id="userAvatar">
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Name: <span id="username"></span></a></li>
+        <li><a class="dropdown-item" href="#">Email: <span id="useremail"></span></a></li>
+        <li><input type="file" id="imageUpload" accept="image/*" style="display: none;"></li>
+        <li><a class="dropdown-item" href="#" id="uploadAvatar">Upload Avatar</a></li>
+        <li><a class="dropdown-item" href="#" id="signOut">Logout</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+
+    <div class="bookcontainer">
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./images/destination-1.jpg" class="d-block w-100" alt="Destination 1">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/destination-2.jpg" class="d-block w-100" alt="Destination 2">
+          </div>
+          <div class="carousel-item">
+            <img src="./images/destination-3.jpg" class="d-block w-100" alt="Destination 3">
+          </div>
+        </div>
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="traveldata">
+        <h1 id="travelTitle">Loading...</h1>
+        <p id="travelId"></p>
+      </div>
+      <h1 class="fade-in">Travel Ticket Booking</h1>
+
+      <!-- Arrival Input -->
+      <div class="input-group">
+        <label for="arrival">Arrival Point:</label>
+        <input type="text" id="arrival" placeholder="Enter Arrival City" oninput="updateSuggestions('arrival')"
+          autocomplete="off">
+        <div id="arrival-suggestions" class="suggestions"></div>
+      </div>
+
+      <!-- Destination Input -->
+      <div class="input-group">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" placeholder="Enter Destination City"
+          oninput="updateSuggestions('destination')" autocomplete="off">
+        <div id="destination-suggestions" class="suggestions"></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <button onclick="calculatePrice()" class="animate-btn">Calculate Price</button>
+        <button id="confirmPurchase" class="btn confirm-btn" onclick="open_passengerform()">Confirm Purchase</button>
+      </div>
+
+      <!-- Price and Error Display -->
+      <div id="price" class="price"></div>
+      <div id="error" class="error"></div>
+    </div>
+    
+      <div class="passengerform" id="passengerform">
+        <h1>Passenger Ticket Booking Form</h1>
+        <form id="ticket-form">
+          <!-- Display travel details in the passenger form -->
+          <div class="price-section">
+            <div class="form-group">
+              <label for="travel-title">Travel Title:</label>
+              <input type="text" id="travel-title" name="travel-title" readonly>
+            </div>
+            <div class="form-group">
+              <label for="travel-id">Travel ID:</label>
+              <input type="text" id="travel-id" name="travel-id" readonly>
+            </div>
+            <div class="form-group">
+              <label for="arrival-point">Arrival Point:</label>
+              <input type="text" id="arrival-point" name="arrival-point" readonly>
+            </div>
+            <div class="form-group">
+              <label for="destination-point">Destination Point:</label>
+              <input type="text" id="destination-point" name="destination-point" readonly>
+            </div>
+          </div>
+
+          <!-- Passenger Information -->
+          <div class="phonenumber">
+            <div class="form-group">
+              <label for="full-name">Full Name:</label>
+              <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+          </div>
+
+          <div class="phonenumber">
+            <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth:</label>
+              <input type="date" id="dob" name="dob" class="form" required>
+            </div>
+          </div>
+          <div class="phonenumber">
+            <div class="form-group">
+              <label for="Aadhaar">AADHAAR Number:</label>
+              <input type="text" id="Aadhaar" name="Aadhaar" required placeholder="Enter your Aadhaar number">
+            </div>
+            <div class="form-group">
+              <label for="departure-date">Departure Date:</label>
+              <input type="date" id="departure-date" name="departure-date" class="form" required>
+            </div>
+          </div>
+
+          <!-- Total Price Display -->
+          <div class="price-section">
+            <div class="price-row total">
+              <span>Total Price:</span>
+              <span class="price" id="total-price">₹0</span>
+            </div>
+          </div>
+
+          <div class="passengerforms1">
+            <button class="submit-btn" type="button" onclick="close_passengerform()">Cancel</button>
+            <button type="submit" class="submit-btn" id="BOOKTICKET">Confirm</button>
+          </div>
+        </form>
+      </div>
+
+    <div class="images">
+      <img src="./images/carcar.png" style="margin-top: 30px;">
+      <img src="./images/travelbike.png">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 MANI TRAVELS. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Bootstrap and Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="book.js" type="module"></script>
+
+  <script>
+    // Parse URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const travelId = urlParams.get("id");
+    const travelTitle = urlParams.get("title");
+    const travelprice = urlParams.get("price")
+
+    // Display travel details
+    document.getElementById("travelTitle").innerText = travelTitle || "Travel ";
+    document.getElementById("travelId").innerText = `Travel ID: ${travelId}` || "Travel ID";
+    document.getElementById("total-price").value = travelprice || "Travel price";
+
+    document.getElementById("travel-title").value = travelTitle || "Travel Title";
+    document.getElementById("travel-id").value = travelId || "Travel ID";
+    document.getElementById("total-price").value = travelprice || "Travel price";
+
+    console.log("Travel details loaded:", { travelId, travelTitle, travelprice });
+
+    const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Chennai', 'Kolkata', "Pune", "Goa", "Jaipur", "Chandigarh", "Agra", "Lucknow"];
+    const travelData = [
+      { origin: "Hyderabad", destination: "Bangalore", distance: 650 },
+      { origin: "Hyderabad", destination: "Chennai", distance: 660 },
+      { origin: "Hyderabad", destination: "Mumbai", distance: 700 },
+      { origin: "Hyderabad", destination: "Delhi", distance: 1500 },
+      { origin: "Hyderabad", destination: "Kolkata", distance: 1600 },
+      { origin: "Hyderabad", destination: "Pune", distance: 710 },
+      { origin: "Hyderabad", destination: "Goa", distance: 660 },
+      { origin: "Hyderabad", destination: "Jaipur", distance: 1400 },
+      { origin: "Hyderabad", destination: "Chandigarh", distance: 1800 },
+      { origin: "Hyderabad", destination: "Agra", distance: 1700 },
+      { origin: "Hyderabad", destination: "Lucknow", distance: 1600 },
+
+      { origin: "Bangalore", destination: "Chennai", distance: 350 },
+      { origin: "Bangalore", destination: "Mumbai", distance: 850 },
+      { origin: "Bangalore", destination: "Delhi", distance: 2000 },
+      { origin: "Bangalore", destination: "Kolkata", distance: 1900 },
+      { origin: "Bangalore", destination: "Pune", distance: 200 },
+      { origin: "Bangalore", destination: "Goa", distance: 550 },
+      { origin: "Bangalore", destination: "Jaipur", distance: 1600 },
+      { origin: "Bangalore", destination: "Chandigarh", distance: 2200 },
+      { origin: "Bangalore", destination: "Agra", distance: 2000 },
+      { origin: "Bangalore", destination: "Lucknow", distance: 2100 },
+
+      { origin: "Chennai", destination: "Delhi", distance: 2200 },
+      { origin: "Chennai", destination: "Mumbai", distance: 1300 },
+      { origin: "Chennai", destination: "Kolkata", distance: 1700 },
+      { origin: "Chennai", destination: "Pune", distance: 1200 },
+      { origin: "Chennai", destination: "Goa", distance: 750 },
+      { origin: "Chennai", destination: "Jaipur", distance: 1900 },
+      { origin: "Chennai", destination: "Chandigarh", distance: 2400 },
+      { origin: "Chennai", destination: "Agra", distance: 2200 },
+      { origin: "Chennai", destination: "Lucknow", distance: 2300 },
+
+      { origin: "Mumbai", destination: "Delhi", distance: 1400 },
+      { origin: "Mumbai", destination: "Kolkata", distance: 1900 },
+      { origin: "Mumbai", destination: "Pune", distance: 160 },
+      { origin: "Mumbai", destination: "Goa", distance: 450 },
+      { origin: "Mumbai", destination: "Jaipur", distance: 1200 },
+      { origin: "Mumbai", destination: "Chandigarh", distance: 1700 },
+      { origin: "Mumbai", destination: "Agra", distance: 1300 },
+      { origin: "Mumbai", destination: "Lucknow", distance: 1400 },
+
+      { origin: "Delhi", destination: "Kolkata", distance: 1500 },
+      { origin: "Delhi", destination: "Pune", distance: 1500 },
+      { origin: "Delhi", destination: "Goa", distance: 2000 },
+      { origin: "Delhi", destination: "Jaipur", distance: 300 },
+      { origin: "Delhi", destination: "Chandigarh", distance: 250 },
+      { origin: "Delhi", destination: "Agra", distance: 230 },
+      { origin: "Delhi", destination: "Lucknow", distance: 500 },
+
+      { origin: "Kolkata", destination: "Pune", distance: 1800 },
+      { origin: "Kolkata", destination: "Goa", distance: 1600 },
+      { origin: "Kolkata", destination: "Jaipur", distance: 1500 },
+      { origin: "Kolkata", destination: "Chandigarh", distance: 1700 },
+      { origin: "Kolkata", destination: "Agra", distance: 1600 },
+      { origin: "Kolkata", destination: "Lucknow", distance: 1400 },
+
+      { origin: "Pune", destination: "Goa", distance: 400 },
+      { origin: "Pune", destination: "Jaipur", distance: 1200 },
+      { origin: "Pune", destination: "Chandigarh", distance: 1400 },
+      { origin: "Pune", destination: "Agra", distance: 1300 },
+      { origin: "Pune", destination: "Lucknow", distance: 1200 },
+
+      { origin: "Goa", destination: "Jaipur", distance: 1600 },
+      { origin: "Goa", destination: "Chandigarh", distance: 1800 },
+      { origin: "Goa", destination: "Agra", distance: 1600 },
+      { origin: "Goa", destination: "Lucknow", distance: 1500 },
+
+      { origin: "Jaipur", destination: "Chandigarh", distance: 400 },
+      { origin: "Jaipur", destination: "Agra", distance: 240 },
+      { origin: "Jaipur", destination: "Lucknow", distance: 750 },
+
+      { origin: "Chandigarh", destination: "Agra", distance: 320 },
+      { origin: "Chandigarh", destination: "Lucknow", distance: 600 },
+
+      { origin: "Agra", destination: "Lucknow", distance: 350 }
+    ];
+
+    function updateSuggestions(inputId) {
+      const input = document.getElementById(inputId);
+      const suggestions = document.getElementById(`${inputId}-suggestions`);
+      const query = input.value.toLowerCase();
+
+      // Filter cities matching the query
+      const filteredCities = cities.filter(city => city.toLowerCase().includes(query));
+
+      // Clear old suggestions
+      suggestions.innerHTML = '';
+
+      // Add new suggestions
+      filteredCities.forEach(city => {
+        const suggestion = document.createElement('div');
+        suggestion.textContent = city;
+
+        // Set input value on click
+        suggestion.onclick = () => {
+          input.value = city;
+          suggestions.innerHTML = ''; // Clear suggestions after selection
+        };
+
+        suggestions.appendChild(suggestion);
+      });
+
+      // Show suggestions if there are matches
+      suggestions.style.display = filteredCities.length > 0 ? 'block' : 'none';
+    }
+
+    // Function to handle booking confirmation and redirect to ticket page
+    function confirmBooking() {
+      // Redirect to the ticket page
+      window.location.href = 'ticket.html';
+    }
+
+    // Add event listeners for input elements
+    document.getElementById('arrival').addEventListener('input', () => updateSuggestions('arrival'));
+    document.getElementById('destination').addEventListener('input', () => updateSuggestions('destination'));
+
+    let popup = document.getElementById("passengerform");
+
+    // Function to calculate the ticket price based on selected cities
+    function calculatePrice() {
+      const arrival = document.getElementById('arrival').value;
+      const destination = document.getElementById('destination').value;
+
+      // Find the matching route
+      const selectedRoute = travelData.find(route => route.origin === arrival && route.destination === destination);
+
+      if (selectedRoute) {
+        const price = selectedRoute.distance * 2; // ₹2 per kilometer
+        document.getElementById('price').textContent = `Ticket Price: ₹${price}`;
+        document.getElementById('error').textContent = '';
+        document.getElementById('confirmPurchase').style.display = 'block'; // Show confirm button
+      } else {
+        document.getElementById('error').textContent = 'No valid route found.';
+        document.getElementById('price').textContent = '';
+        document.getElementById('confirmPurchase').style.display = 'none'; // Hide confirm button
+      }
+    }
+
+    // Function to open the passenger form and transfer data
+    function open_passengerform() {
+      const arrivalInput = document.getElementById('arrival').value;
+      const destinationInput = document.getElementById('destination').value;
+
+      // Grab the price directly from the container's #price field
+      const priceText = document.getElementById('price').textContent;
+      const totalPrice = priceText.replace('Ticket Price: ₹', '').trim(); // Clean the price string
+
+      if (arrivalInput && destinationInput && totalPrice) {
+        // Set values in the passenger form
+        document.getElementById('arrival-point').value = arrivalInput;
+        document.getElementById('destination-point').value = destinationInput;
+        document.getElementById('total-price').textContent = `₹${totalPrice}`; // Set the total price in the form
+        document.getElementById('passengerform').classList.add('open_passengerform');
+      } else {
+        alert('Please fill in both Arrival and Destination points and calculate the price before proceeding.');
+      }
+    }
+
+    // Function to close the passenger form
+    function close_passengerform() {
+      document.getElementById('passengerform').classList.remove('open_passengerform');
+    }
+    
+  </script>
+</body>
+
+</html>

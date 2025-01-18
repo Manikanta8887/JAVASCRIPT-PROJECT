@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-image: url("./images/WhatsApp\ Image\ 2024-11-23\ at\ 07.10.27_7bf59146.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'PT Serif', serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #E4B7A0;
+  color: #c47309;
+  padding: 10px 20px;
+}
+
+section {
+  margin-top: 60px;
+}
+
+/* Logo and title alignment */
+header .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header img.logo {
+  width: 50px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Navigation bar */
+header nav ul {
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  list-style: none;
+}
+
+header nav li a {
+  text-decoration: none;
+  color: white;
+  background-color: #E4B7A0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+header nav li a:hover {
+  background-color: white;
+  color: #E4B7A0;
+}
+
+/* Dropdown styling */
+header .dropdown {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Remove the dropdown arrow */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Style the profile image */
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+/* Dropdown menu alignment */
+.dropdown-menu {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 150px;
+}
+
+.fa-bell {
+  font-size: 20px;
+  font-weight: bold;
+  color: #c6612f;
+}
+
+/* Layout for Sidebar and Content */
+main {
+  display: flex;
+  flex: 1;
+}
+
+/* Content Section */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Gallery Section */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  height: 350px; /* Set a fixed height for all gallery items */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 350px; /* Ensure the images fill the entire height */
+  object-fit: cover; /* Maintain the image aspect ratio */
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 0.9;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #E4B7A0;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Popup background */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Popup content container */
+.popup-content {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  padding: 40px;
+}
+
+.iframevideos{
+  display: flex;
+  width:100%;
+  height:100%;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #e74c3c;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #c0392b;
+}
+
+/* Iframe container */
+.iframe-container {
+  display: flex;
+  /* flex: 1; */
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+  background: #d5cfcf;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+#iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+  /* object-fit: cover; */
+}
+
+#iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+}
+
+/* Right side content */
+.right-container {
+  width: 30%;
+  height: 100%;
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  background-color: #f9f9f9;
+  /* border-left: 2px solid #ddd; */
+}
+
+/* Content blocks */
+.top-right-container,
+.bottom-right-container,
+.bottom-container {
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  /* padding: 10px; */
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for content blocks */
+.top-right-container:hover,
+.bottom-right-container:hover,
+.bottom-container:hover {
+  background-color: #d5d5d5;
+}
+
+/* Text and styles for content blocks */
+.top-right-container,
+.bottom-right-container {
+  height: 30%;
+}
+
+.bottom-container {
+  height: 36%;
+  padding: 20px 5px 0px 5px;
+}
+
+
+.popup .popup-content iframe {
+  width: 80%; 
+  max-width: 600px; 
+  height: 400px; 
+  margin: 0 auto;
+  display: block; 
+}
+
+/* If you are using a <video> element instead of iframe */
+.popup .popup-content video {
+  width: 80%; 
+  height: 100%;
+  /* max-width: 600px;  */
+  /* height: 400px; */
+  margin: 0 auto;
+  display: block; 
+}
+
+
+
+.right-container .clickable {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.right-container img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+}
+.right-container video {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Now</title>
+  <link rel="stylesheet" href="Booknow.css"> <!-- Link to your CSS file -->
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
+
+</head>
+
+<body>
+  <!-- <header>
+    <h1>Confirm Your Booking</h1>
+  </header> -->
+  <header>
+    <h1>
+      <span>Confirm</span>
+      <span>Your</span>
+      <span>Booking</span>
+    </h1>
+  </header>
+
+  <section class="coupon-section">
+    <h2>Available Coupons</h2>
+    <div id="coupon-list" class="coupon-list">
+      <!-- Coupons will be displayed dynamically here -->
+    </div>
+    <div id="coupon-message" class="coupon-message">Apply any two of these coupons to get Dicount</div>
+  </section>
+
+
+  <main class="main">
+    <div class="package-details" id="packageDetails">
+      <!-- Package details will be loaded dynamically here -->
+    </div>
+    <div class="actions">
+      <button id="confirmPurchase" class="btn confirm-btn" onclick="open_passengerform()">Confirm Purchase</button>
+      <button id="cancelPurchase" class="btn cancel-btn">Cancel</button>
+    </div>
+  </main>
+
+  <div class="passengerform" id="passengerform">
+    <h1>Passenger Ticket Booking Form</h1>
+    <form id="ticket-form">
+      <div class="form-group">
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+      </div>
+
+      <div class="phonenumber">
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" class="form" required>
+        </div>
+      </div>
+
+      <div class="phonenumber">
+        <div class="form-group">
+          <label for="Aadhaar">AADHAAR Number:</label>
+          <input type="text" id="Aadhaar" name="Aadhaar" required placeholder="Enter your Aadhaar number">
+        </div>
+
+        <div class="form-group">
+          <label for="departure-date">Departure Date:</label>
+          <input type="date" id="departure-date" name="departure-date" class="form" required>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+          <option value="GODAVARI">GODAVARI</option>
+          <option value="KONASEEMA">KONASEEMA</option>
+          <option value="ANNAVARAM">ANNAVARAM</option>
+          <option value="TIRUMALA">TIRUMALA</option>
+          <option value="ARAKU">ARAKU</option>
+          <option value="MAREDUMILLI">MAREDUMILLI</option>
+          <option value="LAMBASINGI">LAMBASINGI</option>
+          <option value="VANAJANGI">VANAJANGI</option>
+          <option value="GUDISA">GUDISA</option>
+          <option value="RAMPACHODAVARAM">RAMPACHODAVARAM</option>
+          <option value="VIZAG">VIZAG</option>
+          <option value="RAVULAPALEM">RAVULAPALEM</option>
+        </select>
+      </div>
+
+
+      <div class="passengerforms">
+        <div class="price-section">
+          <div class="price-row">
+            <span>Original Price:</span>
+            <span class="price" id="pricess">₹0</span>
+          </div>
+          <div class="price-row">
+            <span>Discounted Price:</span>
+            <span class="price" id="discounted-price">-₹0</span>
+          </div>
+          <div class="price-row total">
+            <span>Total Price:</span>
+            <span class="price" id="total-price">₹0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="passengerforms1">
+        <button class="submit-btn" onclick="close_passengerform()">Cancel</button>
+        <button type="submit" class="submit-btn" id="BOOKTICKET">Confirm</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="package-details-container">
+    <div class="package-details1">
+      <!-- Existing package details content goes here -->
+
+      <div class="terms-card">
+        <h3>Terms & Conditions</h3>
+        <ul>
+          <li>All bookings are non-refundable.</li>
+          <li>Prices are subject to change based on availability.</li>
+          <li>Cancellations made within 24 hours will incur a penalty.</li>
+          <li>Travel dates and availability are subject to confirmation.</li>
+          <li>Special offers may apply based on availability.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let popup = document.getElementById("passengerform");
+
+    function open_passengerform() {
+      passengerform.classList.add("open_passengerform");
+    }
+
+    function close_passengerform() {
+      passengerform.classList.remove("open_passengerform");
+    }
+
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="Booknow.js" type="module"></script>
+  <!-- Link to your JS file -->
+
+</body>
+
+</html>

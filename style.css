@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  position: static;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #E4B7A0;
+  color: #c47309;
+}
+
+header img {
+  margin: 0px 0px 0px 50px;
+}
+
+header h1 {
+  margin: 0px 0px 0px 0px;
+  font-size: 1.5rem;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header ul {
+  display: flex;
+  gap: 20px;
+}
+
+header li {
+  color: white;
+  background-color: #E4B7A0;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+header li:hover {
+  background-color: white;
+  color: #E4B7A0;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+header button {
+  color: white;
+  background-color: #E4B7A0;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 0px 50px;
+  border: none;
+}
+
+header button:hover {
+  background-color: white;
+  color: #E4B7A0;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+li {
+  list-style: none;
+  padding: 0px 15px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 3%;
+  margin: 2% 2% 0% 0%;
+  padding: 0% 0% 3% 3%;
+}
+
+.videocontainer {
+  position: relative;
+  width: 46%;
+}
+
+video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.videotitle {
+  position: absolute;
+  top: 10%;
+  right: 35%;
+  z-index: 10;
+  color: #fff;
+  padding: 8px 12px;
+  font-weight: bold;
+  font-family: "PT Serif", serif;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.videotitle1 {
+  position: absolute;
+  top: 85%;
+  right: 75%;
+  z-index: 10;
+  background: #651b9a;
+  color: #fff;
+  padding: 12px;
+  font-weight: bold;
+  font-family: "PT Serif", serif;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.videotitle1:hover {
+  background-color: #fff;
+  color: #6a3094;
+}
+
+.videotitle2 {
+  position: absolute;
+  top: 85%;
+  right: 8%;
+  z-index: 10;
+  background: #651b9a;
+  color: #fff;
+  padding: 12px;
+  font-weight: bold;
+  font-family: "PT Serif", serif;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.videotitle2:hover {
+  background-color: #fff;
+  color: #6a3094;
+}
+
+.wrapper {
+  position: relative; /* Ensure content layers are positioned correctly */
+  width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  font-weight: 800;
+  background-image: url("./images/cartravel.jpg");
+  box-shadow: 2px 2px 5px rgb(204, 171, 114), -2px -2px 5px rgb(214, 163, 8);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Ensure overlay does not exceed bounds */
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+  z-index: 1;
+}
+
+.wrapper * {
+  position: relative;
+  z-index: 2; /* Ensure text and content are above the overlay */
+}
+
+
+.open-popup {
+  visibility: visible;
+  top: 55%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 10;
+}
+
+.open-popuplogin {
+  visibility: visible;
+  top: 55%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 12;
+}
+
+.wrapper:hover {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-image: url("./images/cartravel.jpg");
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: orange;
+}
+
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 10px 0;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: rgb(217, 152, 31);
+  font-size: 22px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: rgb(217, 152, 31);
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.forget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0 0px 0;
+  color: rgb(215, 149, 26);
+}
+
+#remember {
+  accent-color: #fff;
+}
+
+.forget label {
+  display: flex;
+  align-items: center;
+}
+
+.forget label p {
+  margin-left: 8px;
+}
+
+.wrapper a {
+  color: rgb(217, 152, 31);
+  text-decoration: none;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+.register {
+  text-align: center;
+  margin-top: 30px;
+  color: orange;
+}
+
+.child-register {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper form button {
+  background: #fff;
+  font-weight: 600;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 2px solid transparent;
+  position: relative;
+  display: inline-block;
+  color: #df9637;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.wrapper button:hover {
+  background: #c68b3f;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #926933,
+    0 0 25px #9c651d,
+    0 0 50px #ec8907,
+    0 0 100px #ec8907;
+}
+
+body {
+  background-image: url("./images/WhatsApp\ Image\ 2024-11-23\ at\ 07.10.27_7bf59146.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.forms {
+  display: flex;
+  gap: 20px;
+}
+
+.Tripstitle {
+  position: absolute;
+  top: 13%;
+  right: 16%;
+  z-index: 10;
+  background: white;
+  color: #E4B7A0;
+  padding: 0px 12px;
+  font-weight: bold;
+  font-family: "PT Serif", serif;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(195, 114, 9);
+}
+
+.Tripstitle:hover {
+  background: #E4B7A0;
+  color: white;
+}
+
+.Trips {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 46%;
+  height: 80vh;
+  border: 2px solid orange;
+  background-color: #E4B7A0;
+  color: #c47309;
+  border-radius: 10px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+.Trips h1:hover {
+  background-color: white;
+  color: #E4B7A0;
+  padding: 0px 10px;
+  border-radius: 10px;
+}
+
+.Trips1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.Trips11 {
+  display: flex;
+}
+
+.Trip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 250px;
+  height: 220px;
+  border-radius: 10px;
+}
+
+.discount {
+  position: absolute;
+  top: 43px;
+  right: 25px;
+  background: #651b9a;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #E4B7A0;
+  color: white;
+  margin-top: 2rem;
+}

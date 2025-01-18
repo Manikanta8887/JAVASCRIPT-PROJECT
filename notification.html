@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANI TRAVELS</title>
+  <!-- Include external CSS file -->
+  <link rel="stylesheet" href="./notification.css">
+  <!-- Include jsPDF library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <a class="backhome" href="./home.html">Home</a>
+    <h1>Notification Center</h1>
+    <a class="backhome" href="./packages.html">Packages</a>
+  </header>
+  
+  <main>
+    <div id="notifications">
+      <p>Loading your tickets...</p>
+    </div>
+    <div class="button-container">
+      <button onclick="window.location.href='packages.html'">Back to Packages</button>
+    </div>
+  </main>
+
+  <script type="module" src="./notification.js"></script>
+</body>
+</html>

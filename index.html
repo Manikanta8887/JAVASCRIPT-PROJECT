@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANI TRAVELS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./images/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.10/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.10/dist/sweetalert2.all.min.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="./images/logo.png" alt="SANCHARI" width="80px" class="logo">
+      <h1>MANI TRAVELS</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a onclick="openpopuplogin()">HOME</a></li>
+        <li><a onclick="openpopuplogin()">BOOK</a></li>
+        <li><a onclick="openpopuplogin()">PACKAGES</a></li>
+        <li><a onclick="openpopuplogin()">CONTACT US</a></li>
+        <li><a onclick="openpopuplogin()">GALLERY</a></li>
+      </ul>
+    </nav>
+    <div class="Login">
+      <button type="submit" onclick="openpopuplogin()"><i class="fa-solid fa-user" style="font-size: 16px;
+        padding-right: 5px;"></i> LOG IN</button>
+    </div>
+  </header>
+
+  <div id="container">
+    <div class="videocontainer">
+      <h1 class="videotitle">MANI TRAVELS</h1>
+      <video autoplay muted loop>
+        <source src="./images/Godavari.mp4" type="video/mp4">
+      </video>
+      <button type="submit" class="videotitle1" onclick="openpopuplogin()">EXPLORE MORE</button>
+      <button type="submit" class="videotitle2" onclick="openpopup()">SIGN UP</button>
+    </div>
+
+    <h1 class="Tripstitle">POPULAR TRIPS</h1>
+
+    <div class="Trips">
+      <h3 style="color:white">By customer's choice</h3>
+      <div class="Trips11">
+        <div class="Trips1">
+          <div class="Trip">
+            <h1>Godavari</h1>
+            <div class="discount">40% Off</div>
+            <img src="./images/Godavari Bridge.jpeg" class="img">
+          </div>
+        </div>
+        <div class="Trips1">
+          <div class="Trip">
+            <h1>Tirupati</h1>
+            <div class="discount">20% Off</div>
+            <img src="./images/Tirumala.jpg" class="img">
+          </div>
+        </div>
+      </div>
+      <div class="Trips11">
+        <div class="Trips1">
+          <div class="Trip">
+            <h1>Konaseema</h1>
+            <div class="discount">30% Off</div>
+            <img src="./images/Konaseema.jpg" class="img">
+          </div>
+        </div>
+        <div class="Trips1">
+          <div class="Trip">
+            <h1>Annavaram</h1>
+            <div class="discount">20% Off</div>
+            <img src="./images/Annavaram.jpeg" class="img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="forms">
+    <div class="wrapper" id="popup1">
+      <form action="#">
+        <h2>Login Form</h2>
+        <div class="input-field">
+          <input type="text" id="login_email" required>
+          <label>Enter your email</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login_password" required>
+          <label>Enter your password</label>
+        </div>
+        <div class="forget">
+          <label for="remember">
+            <input type="checkbox" id="remember">
+            <p>Remember me</p>
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="button" id="login">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Log In</button>
+        <div class="register">
+          <p>Don't have an account?</p>
+          <div class="child-register"><button onclick="openpopup(),closepopuplogin()">SIGN UP</button>
+            <button type="button" onclick="closepopuplogin()">OK</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="wrapper" id="popup">
+      <form action="#">
+        <h2>Sign Up</h2>
+        <div class="input-field">
+          <input type="text" id="signup_fullname" required>
+          <label>Enter your Name</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="signup_email" required>
+          <label>Enter your email</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup_password" required>
+          <label>Enter your password</label>
+        </div>
+        <div class="forget">
+          <label for="remember">
+            <input type="checkbox" id="remember">
+            <p>Remember me</p>
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="button" id="signup">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Sign Up</button>
+        <div class="register">
+          <p>Already have an account?</p>
+          <div class="child-register"><button onclick="openpopuplogin(),closepopup()">LOG IN</button>
+            <button type="button" onclick="closepopup()">OK</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="index.js" type="module"></script>
+  <!-- Include SweetAlert2 CDN in the HTML -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+  <script>
+    let popup = document.getElementById("popup");
+
+    function openpopup() {
+      popup.classList.add("open-popup");
+    }
+
+    function closepopup() {
+      popup.classList.remove("open-popup");
+    }
+
+    let popup1 = document.getElementById("popup1");
+
+    function openpopuplogin() {
+      popup1.classList.add("open-popuplogin");
+    }
+
+    function closepopuplogin() {
+      popup1.classList.remove("open-popuplogin");
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2024 Sanchari. All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>
