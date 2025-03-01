@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 section {
@@ -59,7 +59,6 @@ section .girl {
 }
 
 .login {
-  position: relative;
   padding: 60px;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(15px);
@@ -67,9 +66,7 @@ section .girl {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
+  width: 40%;
   gap: 30px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
 }
@@ -242,7 +239,6 @@ section .girl {
 .ceo-card {
   display: flex;
   width: 78%;
-  /* max-width: 900px; */
   padding: 50px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -256,13 +252,11 @@ section .girl {
   border-radius: 10%;
   object-fit: cover;
   border: 5px solid #E4B7A0;
-  /* Optional border to match theme */
   animation: fadeIn 2s ease-in-out forwards;
 }
 
 .ceo-info {
   margin-left: 30px;
-  /* Add more space between photo and text */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -270,7 +264,6 @@ section .girl {
 
 .ceo-info h2 {
   font-size: 2.5rem;
-  /* Increase font size */
   color: #333;
   margin-bottom: 20px;
   opacity: 0;
@@ -280,11 +273,9 @@ section .girl {
 .ceo-description span {
   display: block;
   font-size: 1.3rem;
-  /* Larger font size for better readability */
   color: #555;
   margin-bottom: 12px;
   line-height: 1.6;
-  /* Better spacing between lines */
   opacity: 0;
   animation: fadeText 3s ease-in-out forwards;
 }
@@ -350,7 +341,6 @@ body {
 
 .ticket-container {
   max-width: 450px;
-  /* margin: 50px auto; */
   padding: 20px;
   background: #ffffff;
   border-radius: 8px;
@@ -365,15 +355,15 @@ body {
 
 h1 {
   color: #333;
-  margin-bottom: 20px; /* Reduced margin */
-  font-size: 1.8em; /* Smaller font size */
+  margin-bottom: 20px; 
+  font-size: 1.8em; 
   font-weight: 600;
 }
 
 #ticketDetails {
   text-align: left;
-  margin-bottom: 20px; /* Reduced margin */
-  padding: 15px; /* Reduced padding */
+  margin-bottom: 20px; 
+  padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fafafa;
@@ -383,7 +373,7 @@ h1 {
 #ticketDetails p {
   font-size: 1em;
   color: #444;
-  margin-bottom: 12px; /* Reduced margin */
+  margin-bottom: 12px; 
   line-height: 1.6;
 }
 
@@ -392,13 +382,13 @@ h1 {
 }
 
 button {
-  padding: 10px 20px; /* Reduced padding */
+  padding: 10px 20px; 
   background-color: #5cb85c;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px; /* Smaller font size */
+  font-size: 16px; 
   font-weight: 500;
   transition: background-color 0.3s ease;
   display: inline-block;
@@ -413,13 +403,13 @@ button:focus {
 }
 
 .ticket-details-header {
-  margin-bottom: 15px; /* Reduced margin */
-  font-size: 1.2em; /* Smaller font size */
+  margin-bottom: 15px; 
+  font-size: 1.2em; 
   font-weight: bold;
   color: #333;
   text-transform: uppercase;
   border-bottom: 2px solid #8f2c24;
-  padding-bottom: 8px; /* Reduced padding */
+  padding-bottom: 8px; 
 }
 
 .ticket-details-header::before {
@@ -434,19 +424,19 @@ button:focus {
 .ticket-info {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px; /* Reduced gap */
-  margin-bottom: 20px; /* Reduced margin */
+  gap: 10px; 
+  margin-bottom: 20px; 
 }
 
 .ticket-info .info-item {
   background-color: #f9f9f9;
-  padding: 10px; /* Reduced padding */
+  padding: 10px; 
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .ticket-info .info-item p {
-  font-size: 0.95em; /* Smaller font size */
+  font-size: 0.95em;
   color: #666;
 }
 

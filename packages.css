@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "PT Serif", serif;
+  font-family: Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -36,8 +36,6 @@ section {
   margin-top: 60px;
 }
 
-
-/* Logo and title alignment */
 header .logo-container {
   display: flex;
   align-items: center;
@@ -53,7 +51,6 @@ header h1 {
   margin: 0;
 }
 
-/* Navigation bar */
 header nav ul {
   display: flex;
   gap: 15px;
@@ -75,19 +72,16 @@ header nav li a:hover {
   color: #E4B7A0;
 }
 
-/* Dropdown styling */
 header .dropdown {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Remove the dropdown arrow */
 .dropdown-toggle::after {
   display: none !important;
 }
 
-/* Style the profile image */
 .profile-img {
   width: 40px;
   height: 40px;
@@ -96,7 +90,6 @@ header .dropdown {
   border: 2px solid #ccc;
 }
 
-/* Dropdown menu alignment */
 .dropdown-menu {
   top: 100%;
   left: 50%;
@@ -189,8 +182,6 @@ footer {
   font-family: Arial, sans-serif;
 }
 
-
-/* General Small Screens (max-width: 768px) */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -235,7 +226,6 @@ footer {
   }
 }
 
-/* Extra Small Screens (max-width: 480px) */
 @media (max-width: 480px) {
   header {
     padding: 8px;
@@ -260,14 +250,12 @@ footer {
   }
 }
 
-/* Medium Screens (max-width: 992px) */
 @media (max-width: 992px) {
   header h1 {
     font-size: 1.3rem;
   }
 }
 
-/* Landscape Phones or Short Screens (max-height: 600px) */
 @media (max-height: 600px) {
   header {
     padding: 5px 10px;
@@ -278,7 +266,6 @@ footer {
   }
 }
 
-/* High Resolution Large Screens (min-width: 1200px) */
 @media (min-width: 1200px) {
   header {
     padding: 15px 40px;

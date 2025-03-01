@@ -1,11 +1,10 @@
-/* General Styling */
 @import url('https://fonts.googleapis.com/css2?family=Lacquer&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "PT Serif", serif;
+  font-family: Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -17,26 +16,17 @@ body {
   position: absolute;
 }
 
-/* Header */
 header {
-  position: fixed;
-  top: 0;
-  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: auto;
   background-color: #E4B7A0;
   color: #c47309;
-  padding: 10px 20px;
 }
 
-/* Logo and title alignment */
 header .logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 header img.logo {
@@ -48,12 +38,14 @@ header h1 {
   margin: 0;
 }
 
-/* Navigation bar */
 header nav ul {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
   margin: 0;
   list-style: none;
+  font-size: 20px;
 }
 
 header nav li a {
@@ -62,7 +54,7 @@ header nav li a {
   background-color: #E4B7A0;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 header nav li a:hover {
@@ -70,18 +62,17 @@ header nav li a:hover {
   color: #E4B7A0;
 }
 
-/* Dropdown styling */
 header .dropdown {
   display: flex;
   align-items: center;
   gap: 20px;
+  color: #c47309;
 }
 
 .dropdown-toggle::after {
   display: none !important;
 }
 
-/* Profile image */
 .profile-img {
   width: 40px;
   height: 40px;
@@ -90,12 +81,19 @@ header .dropdown {
   border: 2px solid #ccc;
 }
 
-/* Dropdown menu alignment */
 .dropdown-menu {
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 150px;
+  transform: translateX(70%);
+  min-width: 120px;
+  color: #c47309;
+}
+
+.dropdown-menu li :hover {
+  font-size: 22px;
+  color: #c47309;
+}
+
+.dropdown-menu li a {
+  font-size: 22px;
 }
 
 .fa-bell {
@@ -104,7 +102,15 @@ header .dropdown {
   color: #c6612f;
 }
 
-/* Input Group */
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: #E4B7A0;
+  background-color: white;
+}
+
 .input-group {
   margin-bottom: 25px;
   position: relative;
@@ -132,7 +138,6 @@ input:focus {
   box-shadow: 0 0 8px rgba(0, 122, 255, 0.5);
 }
 
-/* Suggestions Dropdown */
 .suggestions {
   position: absolute;
   top: 50px;
@@ -157,7 +162,6 @@ input:focus {
   background: #e0e0e0;
 }
 
-/* Container */
 .container {
   background: #fff;
   padding: 30px;
@@ -174,7 +178,6 @@ input:focus {
 
 .container h1 {
   font-size: 2em;
-  /* color: #333; */
   margin-bottom: 20px;
   color: #d88c68;
 }
@@ -190,12 +193,6 @@ input:focus {
   color: #d88c68;
 }
 
-/* 
-.traveldata h1{
-  color: #d88c68;
-} */
-
-/* Buttons */
 .container .button-group {
   display: flex;
   justify-content: space-between;
@@ -223,10 +220,8 @@ input:focus {
   animation: bounce 1s infinite alternate;
 }
 
-/* Book Container */
 .bookcontainer {
   width: 100%;
-  /* margin: 70px 0 0 0; */
 }
 
 .bookcontainer img {
@@ -234,7 +229,6 @@ input:focus {
   height: 50vh;
 }
 
-/* Price and Error Display */
 .price {
   margin-top: 15px;
   font-size: 18px;
@@ -251,7 +245,7 @@ input:focus {
   animation: fadeIn 1s ease-in-out;
 }
 
-/* Footer Styling */
+
 footer {
   background: #E4B7A0;
   color: #fff;
@@ -263,7 +257,6 @@ footer {
   z-index: -1;
 }
 
-/* Keyframe Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -284,8 +277,6 @@ footer {
   }
 }
 
-
-/* Suggestions Dropdown */
 .suggestions {
   position: absolute;
   top: 50px;
@@ -310,7 +301,6 @@ footer {
 }
 
 section {
-  margin-top: 60px;
   position: relative;
   width: 100vw;
   height: 40vh;
@@ -332,9 +322,6 @@ section {
   font-family: Arial, sans-serif;
 }
 
-
-
-/* Passenger Form Container */
 .passengerform {
   margin-top: 10%;
   background-color: white;
@@ -368,15 +355,11 @@ section {
   z-index: 1000;
 }
 
-/* Header Styling */
 header h1 {
   font-size: 1.5rem;
-  /* margin-bottom: 20px; */
-  /* color: #4a3a2e; */
   color: #c16d45;
 }
 
-/* Form Group Styling */
 .form-group {
   margin-bottom: 15px;
   text-align: left;
@@ -389,7 +372,6 @@ label {
   margin-bottom: 5px;
 }
 
-/* Input Fields */
 input,
 select {
   width: 100%;
@@ -404,7 +386,6 @@ select:focus {
   outline: none;
 }
 
-/* Phone Number Section */
 .phonenumber {
   display: flex;
   justify-content: space-between;
@@ -415,7 +396,6 @@ select:focus {
   margin-top: 5px;
 }
 
-/* Price Section */
 .price-section {
   display: flex;
   justify-content: space-between;
@@ -453,7 +433,6 @@ select:focus {
   font-weight: bold;
 }
 
-/* Passenger Form Buttons */
 .passengerforms1 {
   display: flex;
   gap: 10px 20px;
@@ -462,7 +441,6 @@ select:focus {
   margin-top: 20px;
 }
 
-/* Submit and Cancel Buttons */
 .submit-btn {
   background-color: #ffb38e;
   padding: 10px 30px;
@@ -478,88 +456,23 @@ select:focus {
   background-color: #d88c68;
 }
 
-
-/* General Small Screens (max-width: 768px) */
-@media (max-width: 768px) {
-  header {
-    align-items: center;
-    align-items: flex-start;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .container {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .images {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .images img {
-    width: 100%;
-    height: auto;
-  }
-
-  .bookcontainer img {
-    width: 100%;
-    height: auto;
-  }
-
-  .phonenumber {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .price-section {
-    flex-direction: column;
-    gap: 15px;
-  }
-
+@media (max-width: 480px) {
   .passengerform {
-    padding: 15px;
-    width: 90%;
+    margin-top: 10%;
   }
 
-  .price-row {
-    font-size: 1rem;
-  }
-
-  .passengerforms1 {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .submit-btn {
-    width: 100%;
-  }
-
-  header h1 {
-    font-size: 1.2rem;
-  }
-
-  header nav li a {
-    font-size: 18px;
-    padding: 5px 8px;
-  }
 }
 
-/* Extra Small Screens (max-width: 480px) */
 @media (max-width: 480px) {
-
-  .container{
+  .container {
     position: relative;
     top: 5%;
   }
-  .images{
+
+  .images {
     visibility: hidden;
   }
+
   .phonenumber {
     flex-direction: column;
     gap: 10px;
@@ -568,7 +481,7 @@ select:focus {
   .price-section {
     padding: 15px;
   }
-  
+
   header img.logo {
     width: 40px;
   }
@@ -608,9 +521,112 @@ select:focus {
   .images img {
     width: 90%;
   }
+
+  section {
+    margin-top: 1px;
+  }
+
+  header {
+    padding: 8px;
+  }
+
+  header .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  nav ul {
+    padding: 5px;
+  }
+
+  nav li a {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .profile-img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .dropdown-menu {
+    transform: translateX(-100%);
+    width: 80%;
+    color: #c47309;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  footer {
+    margin-top: 500px;
+  }
 }
 
-/* Medium Screens (max-width: 992px) */
+@media (max-width: 768px) {
+  header {
+    position: static;
+    top: 1%;
+  }
+
+  .logo-container {
+    align-items: center;
+    gap: 5px;
+  }
+
+  img.logo {
+    width: 40px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  nav li a {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .dropdown {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dropdown-menu {
+    transform: translateX(5%);
+    min-width: 120px;
+    color: #c47309;
+  }
+
+  .container {
+    padding: 25px;
+  }
+
+  .images img {
+    width: 48%;
+    height: auto;
+  }
+
+  .price-section {
+    gap: 10px;
+  }
+
+  .phonenumber .form-group {
+    width: 100%;
+  }
+}
+
 @media (max-width: 992px) {
   header {
     padding: 10px;
@@ -636,44 +652,9 @@ select:focus {
   .phonenumber .form-group {
     width: 100%;
   }
+
+  section {
+    margin-top: 60px;
+  }
+
 }
-
-/* Landscape Phones (max-height: 600px) */
-@media (max-height: 600px) {
-  header {
-    position: relative;
-  }
-
-  .container {
-    margin: 20px 0;
-  }
-
-  .passengerform {
-    top: 30%;
-  }
-
-  .images img {
-    height: auto;
-  }
-
-  footer {
-    padding: 10px;
-  }
-}
-
-footer {
-  padding: 20px;
-}
-
-/* Hide the hamburger on larger screens */
-@media (min-width: 768px) {
-  .navbar-toggler {
-    display: none;
-  }
-}
-
-/* Style the hamburger icon */
-.navbar-toggler-icon {
-  background-color: #c47309; /* Adjust the color of the hamburger icon */
-}
-

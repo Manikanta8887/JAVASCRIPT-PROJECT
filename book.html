@@ -11,56 +11,84 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="book.css">
 </head>
+
 <body>
   <header>
-    <div class="logo-container">
-      <img src="./images/logo.png" alt="SANCHARI" class="logo">
-      <h1>MANI TRAVELS</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="./home.html">HOME</a></li>
-        <li><a href="./book.html">BOOK</a></li>
-        <li><a href="./packages.html">PACKAGES</a></li>
-        <li><a href="./contactus.html">CONTACT US</a></li>
-        <li><a href="./gallery.html">GALLERY</a></li>
-      </ul>
-    </nav>
-    <div class="dropdown">
-      <a href="./notification.html"><i class="fa-regular fa-bell"></i></a>
-      <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" class="profile-img" alt="User Avatar"
-          id="userAvatar">
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Name: <span id="username"></span></a></li>
-        <li><a class="dropdown-item" href="#">Email: <span id="useremail"></span></a></li>
-        <li><input type="file" id="imageUpload" accept="image/*" style="display: none;"></li>
-        <li><a class="dropdown-item" href="#" id="uploadAvatar">Upload Avatar</a></li>
-        <li><a class="dropdown-item" href="#" id="signOut">Logout</a></li>
-      </ul>
+    <div class="container-fluid d-flex justify-content-between align-items-center p-3">
+      <div class="logo-container d-flex align-items-center">
+        <img src="https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221113/logo_ungfdu.png" alt="SANCHARI" class="logo me-2">
+        <h1 class="mb-0">MANI TRAVELS</h1>
+      </div>
+
+      <!-- Navbar with Hamburger Menu -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./home.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./book.html">BOOK</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./packages.html">PACKAGES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contactus.html">CONTACTUS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./gallery.html">GALLERY</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="./notification.html" class="nav-link">
+                <i class="fa-regular fa-bell"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" class="profile-img"
+                  alt="User Avatar" id="userAvatar">
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Name: <span id="username"></span></a></li>
+                <li><a class="dropdown-item" href="#">Email: <span id="useremail"></span></a></li>
+                <li><input type="file" id="imageUpload" accept="image/*" style="display: none;"></li>
+                <li><a class="dropdown-item" href="#" id="uploadAvatar">Upload Avatar</a></li>
+                <li><a class="dropdown-item" href="#" id="signOut">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </header>
-
   <section>
 
     <div class="bookcontainer">
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./images/destination-1.jpg" class="d-block w-100" alt="Destination 1">
+            <img src="https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221091/destination-1_ccj5nl.jpg" class="d-block w-100" alt="Destination 1">
           </div>
           <div class="carousel-item">
-            <img src="./images/destination-2.jpg" class="d-block w-100" alt="Destination 2">
+            <img src="https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221092/destination-2_anh59z.jpg" class="d-block w-100" alt="Destination 2">
           </div>
           <div class="carousel-item">
-            <img src="./images/destination-3.jpg" class="d-block w-100" alt="Destination 3">
+            <img src="https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221092/destination-3_rqam08.jpg" class="d-block w-100" alt="Destination 3">
           </div>
         </div>
-        <!-- Controls -->
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
           data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -81,7 +109,6 @@
       </div>
       <h1 class="fade-in">Travel Ticket Booking</h1>
 
-      <!-- Arrival Input -->
       <div class="input-group">
         <label for="arrival">Arrival Point:</label>
         <input type="text" id="arrival" placeholder="Enter Arrival City" oninput="updateSuggestions('arrival')"
@@ -89,7 +116,6 @@
         <div id="arrival-suggestions" class="suggestions"></div>
       </div>
 
-      <!-- Destination Input -->
       <div class="input-group">
         <label for="destination">Destination:</label>
         <input type="text" id="destination" placeholder="Enter Destination City"
@@ -97,91 +123,87 @@
         <div id="destination-suggestions" class="suggestions"></div>
       </div>
 
-      <!-- Action Buttons -->
       <div class="button-group">
         <button onclick="calculatePrice()" class="animate-btn">Calculate Price</button>
         <button id="confirmPurchase" class="btn confirm-btn" onclick="open_passengerform()">Confirm Purchase</button>
       </div>
 
-      <!-- Price and Error Display -->
       <div id="price" class="price"></div>
       <div id="error" class="error"></div>
     </div>
-    
-      <div class="passengerform" id="passengerform">
-        <h1>Passenger Ticket Booking Form</h1>
-        <form id="ticket-form">
-          <!-- Display travel details in the passenger form -->
-          <div class="price-section">
-            <div class="form-group">
-              <label for="travel-title">Travel Title:</label>
-              <input type="text" id="travel-title" name="travel-title" readonly>
-            </div>
-            <div class="form-group">
-              <label for="travel-id">Travel ID:</label>
-              <input type="text" id="travel-id" name="travel-id" readonly>
-            </div>
-            <div class="form-group">
-              <label for="arrival-point">Arrival Point:</label>
-              <input type="text" id="arrival-point" name="arrival-point" readonly>
-            </div>
-            <div class="form-group">
-              <label for="destination-point">Destination Point:</label>
-              <input type="text" id="destination-point" name="destination-point" readonly>
-            </div>
-          </div>
 
-          <!-- Passenger Information -->
-          <div class="phonenumber">
-            <div class="form-group">
-              <label for="full-name">Full Name:</label>
-              <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required placeholder="Enter your email address">
-            </div>
-          </div>
+    <div class="passengerform" id="passengerform">
+      <h1>Passenger Ticket Booking Form</h1>
+      <form id="ticket-form">
 
-          <div class="phonenumber">
-            <div class="form-group">
-              <label for="phone">Phone Number:</label>
-              <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
-            </div>
-            <div class="form-group">
-              <label for="dob">Date of Birth:</label>
-              <input type="date" id="dob" name="dob" class="form" required>
-            </div>
+        <div class="price-section">
+          <div class="form-group">
+            <label for="travel-title">Travel Title:</label>
+            <input type="text" id="travel-title" name="travel-title" readonly>
           </div>
-          <div class="phonenumber">
-            <div class="form-group">
-              <label for="Aadhaar">AADHAAR Number:</label>
-              <input type="text" id="Aadhaar" name="Aadhaar" required placeholder="Enter your Aadhaar number">
-            </div>
-            <div class="form-group">
-              <label for="departure-date">Departure Date:</label>
-              <input type="date" id="departure-date" name="departure-date" class="form" required>
-            </div>
+          <div class="form-group">
+            <label for="travel-id">Travel ID:</label>
+            <input type="text" id="travel-id" name="travel-id" readonly>
           </div>
+          <div class="form-group">
+            <label for="arrival-point">Arrival Point:</label>
+            <input type="text" id="arrival-point" name="arrival-point" readonly>
+          </div>
+          <div class="form-group">
+            <label for="destination-point">Destination Point:</label>
+            <input type="text" id="destination-point" name="destination-point" readonly>
+          </div>
+        </div>
 
-          <!-- Total Price Display -->
-          <div class="price-section">
-            <div class="price-row total">
-              <span>Total Price:</span>
-              <span class="price" id="total-price">₹0</span>
-            </div>
+        <div class="phonenumber">
+          <div class="form-group">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
           </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+          </div>
+        </div>
 
-          <div class="passengerforms1">
-            <button class="submit-btn" type="button" onclick="close_passengerform()">Cancel</button>
-            <button type="submit" class="submit-btn" id="BOOKTICKET">Confirm</button>
+        <div class="phonenumber">
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
           </div>
-        </form>
-      </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" class="form" required>
+          </div>
+        </div>
+        <div class="phonenumber">
+          <div class="form-group">
+            <label for="Aadhaar">AADHAAR Number:</label>
+            <input type="text" id="Aadhaar" name="Aadhaar" required placeholder="Enter your Aadhaar number">
+          </div>
+          <div class="form-group">
+            <label for="departure-date">Departure Date:</label>
+            <input type="date" id="departure-date" name="departure-date" class="form" required>
+          </div>
+        </div>
+
+        <div class="price-section">
+          <div class="price-row total">
+            <label>Total Price:</label>
+            <span class="price" id="total-price">₹0</span>
+          </div>
+        </div>
+
+        <div class="passengerforms1">
+          <button class="submit-btn" type="button" onclick="close_passengerform()">Cancel</button>
+          <button type="submit" class="submit-btn" id="BOOKTICKET">Confirm</button>
+        </div>
+      </form>
+    </div>
 
     <div class="images">
-      <img src="./images/carcar.png" style="margin-top: 30px;">
-      <img src="./images/travelbike.png">
+      <img src="https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221090/carcar_t5qvum.png" style="margin-top: 30px;">
+      <img src="https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221120/travelbike_ftqg6j.png">
     </div>
   </section>
 
@@ -190,20 +212,17 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <!-- Bootstrap and Custom JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="book.js" type="module"></script>
 
   <script>
-    // Parse URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const travelId = urlParams.get("id");
     const travelTitle = urlParams.get("title");
     const travelprice = urlParams.get("price")
 
-    // Display travel details
     document.getElementById("travelTitle").innerText = travelTitle || "Travel ";
     document.getElementById("travelId").innerText = `Travel ID: ${travelId}` || "Travel ID";
     document.getElementById("total-price").value = travelprice || "Travel price";
@@ -299,87 +318,74 @@
       const suggestions = document.getElementById(`${inputId}-suggestions`);
       const query = input.value.toLowerCase();
 
-      // Filter cities matching the query
       const filteredCities = cities.filter(city => city.toLowerCase().includes(query));
 
-      // Clear old suggestions
       suggestions.innerHTML = '';
 
-      // Add new suggestions
       filteredCities.forEach(city => {
         const suggestion = document.createElement('div');
         suggestion.textContent = city;
 
-        // Set input value on click
         suggestion.onclick = () => {
           input.value = city;
-          suggestions.innerHTML = ''; // Clear suggestions after selection
+          suggestions.innerHTML = '';
         };
 
         suggestions.appendChild(suggestion);
       });
 
-      // Show suggestions if there are matches
       suggestions.style.display = filteredCities.length > 0 ? 'block' : 'none';
     }
 
-    // Function to handle booking confirmation and redirect to ticket page
     function confirmBooking() {
-      // Redirect to the ticket page
       window.location.href = 'ticket.html';
     }
 
-    // Add event listeners for input elements
     document.getElementById('arrival').addEventListener('input', () => updateSuggestions('arrival'));
     document.getElementById('destination').addEventListener('input', () => updateSuggestions('destination'));
 
     let popup = document.getElementById("passengerform");
 
-    // Function to calculate the ticket price based on selected cities
     function calculatePrice() {
       const arrival = document.getElementById('arrival').value;
       const destination = document.getElementById('destination').value;
 
-      // Find the matching route
       const selectedRoute = travelData.find(route => route.origin === arrival && route.destination === destination);
 
       if (selectedRoute) {
         const price = selectedRoute.distance * 2; // ₹2 per kilometer
         document.getElementById('price').textContent = `Ticket Price: ₹${price}`;
         document.getElementById('error').textContent = '';
-        document.getElementById('confirmPurchase').style.display = 'block'; // Show confirm button
+        document.getElementById('confirmPurchase').style.display = 'block';
       } else {
         document.getElementById('error').textContent = 'No valid route found.';
         document.getElementById('price').textContent = '';
-        document.getElementById('confirmPurchase').style.display = 'none'; // Hide confirm button
+        document.getElementById('confirmPurchase').style.display = 'none';
       }
     }
 
-    // Function to open the passenger form and transfer data
     function open_passengerform() {
       const arrivalInput = document.getElementById('arrival').value;
       const destinationInput = document.getElementById('destination').value;
 
-      // Grab the price directly from the container's #price field
       const priceText = document.getElementById('price').textContent;
-      const totalPrice = priceText.replace('Ticket Price: ₹', '').trim(); // Clean the price string
+      const totalPrice = priceText.replace('Ticket Price: ₹', '').trim();
 
       if (arrivalInput && destinationInput && totalPrice) {
-        // Set values in the passenger form
         document.getElementById('arrival-point').value = arrivalInput;
         document.getElementById('destination-point').value = destinationInput;
-        document.getElementById('total-price').textContent = `₹${totalPrice}`; // Set the total price in the form
+        document.getElementById('total-price').innerHTML = `&#8377;${totalPrice}`;
         document.getElementById('passengerform').classList.add('open_passengerform');
       } else {
         alert('Please fill in both Arrival and Destination points and calculate the price before proceeding.');
       }
     }
 
-    // Function to close the passenger form
     function close_passengerform() {
       document.getElementById('passengerform').classList.remove('open_passengerform');
     }
-    
+
+
   </script>
 </body>
 

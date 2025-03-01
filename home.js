@@ -15,14 +15,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
-const db = getFirestore(); // Initialize Firestore
+const db = getFirestore();
 
 document.addEventListener("DOMContentLoaded", () => {
   const avatarImg = document.getElementById("userAvatar");
   const imageInput = document.getElementById("imageUpload");
   const uploadAvatar = document.getElementById("uploadAvatar");
-
-  // Initialize Avatar based on user's email from localStorage
   const initializeUserAvatar = () => {
     const user = auth.currentUser;
     if (user) {
@@ -30,12 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const savedImage = localStorage.getItem(`userAvatar_${userEmail}`);
       avatarImg.src = savedImage || "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png";
 
-      // Fetch user data from Firestore
       fetchUserData(user.uid);
     }
   };
-
-  // Fetch user data from Firestore
   const fetchUserData = async (userId) => {
     try {
       const userDoc = await getDoc(doc(db, "users", userId));
@@ -53,12 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Trigger File Input on Upload Avatar Click
   uploadAvatar.addEventListener("click", () => {
     imageInput.click();
   });
 
-  // Handle Image Upload with Resizing
   imageInput.addEventListener("change", (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -67,12 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Resize the image before saving it
       const reader = new FileReader();
       reader.onload = (e) => {
         const img = new Image();
         img.onload = () => {
-          // Create a canvas to resize the image
           const canvas = document.createElement("canvas");
           const ctx = canvas.getContext("2d");
 
@@ -83,10 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-          // Convert resized image
-          const resizedDataUrl = canvas.toDataURL(file.type);
 
-          // Save resized avatar to localStorage
+          const resizedDataUrl = canvas.toDataURL(file.type);
           const user = auth.currentUser;
           if (user) {
             const userEmail = user.email;
@@ -100,8 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
       reader.readAsDataURL(file);
     }
   });
-
-  // Check if a user is logged in and initialize their avatar and data
   onAuthStateChanged(auth, (user) => {
     if (user) {
       initializeUserAvatar();
@@ -110,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Add event listener to the signout button with SweetAlert
   document.getElementById("signOut").addEventListener("click", () => {
     Swal.fire({
       title: "Are you sure?",
@@ -148,12 +134,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Store travel data in Firestore
   const storeTravelData = async () => {
     const Travels = [
-      { id: 1, title: "Flight", category: "Travel", image: "images/flights.jpeg" },
-      { id: 2, title: "Train", category: "Travel", image: "images/Train11.jpeg" },
-      { id: 3, title: "Bus", category: "Travel", image: "images/bus.jpg" },
-      { id: 4, title: "Car", category: "Travel", image: "images/car.avif" },
-      { id: 5, title: "Auto", category: "Travel", image: "images/a.avif" },
-      { id: 6, title: "Bike", category: "Travel", image: "./images/GT.jpg" },
+      { id: 1, title: "Flight", category: "Travel", image: "https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221092/flights_swubo7.jpg" },
+      { id: 2, title: "Train", category: "Travel", image: "https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221116/Train11_xrvgik.jpg" },
+      { id: 3, title: "Bus", category: "Travel", image: "https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221088/bus_ljyvjs.jpg" },
+      { id: 4, title: "Car", category: "Travel", image: "https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221089/car_rpvnht.avif" },
+      { id: 5, title: "Auto", category: "Travel", image: "https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221079/a_obsnpj.avif" },
+      { id: 6, title: "Bike", category: "Travel", image: "https://res.cloudinary.com/dno3iyo9k/image/upload/v1740221103/Gt_gh8zzm.jpg" },
     ];
 
     try {
@@ -193,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Call the functions to store data and fetch/display travel cards
   storeTravelData(); 
   fetchAndDisplayTravelCards();
 });

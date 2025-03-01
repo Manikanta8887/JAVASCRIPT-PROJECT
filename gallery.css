@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "PT Serif", serif;
+  font-family: Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -36,7 +36,6 @@ section {
   margin-top: 60px;
 }
 
-/* Logo and title alignment */
 header .logo-container {
   display: flex;
   align-items: center;
@@ -52,7 +51,6 @@ header h1 {
   margin: 0;
 }
 
-/* Navigation bar */
 header nav ul {
   display: flex;
   gap: 15px;
@@ -74,19 +72,16 @@ header nav li a:hover {
   color: #E4B7A0;
 }
 
-/* Dropdown styling */
 header .dropdown {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Remove the dropdown arrow */
 .dropdown-toggle::after {
   display: none !important;
 }
 
-/* Style the profile image */
 .profile-img {
   width: 40px;
   height: 40px;
@@ -95,7 +90,6 @@ header .dropdown {
   border: 2px solid #ccc;
 }
 
-/* Dropdown menu alignment */
 .dropdown-menu {
   top: 100%;
   left: 50%;
@@ -109,20 +103,17 @@ header .dropdown {
   color: #c6612f;
 }
 
-/* Layout for Sidebar and Content */
 main {
   display: flex;
   flex: 1;
 }
 
-/* Content Section */
 .content {
   flex: 1;
   padding: 20px;
   background-color: #fff;
 }
 
-/* Gallery Section */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -136,13 +127,13 @@ main {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  height: 350px; /* Set a fixed height for all gallery items */
+  height: 350px; 
 }
 
 .gallery-item img {
   width: 100%;
-  height: 350px; /* Ensure the images fill the entire height */
-  object-fit: cover; /* Maintain the image aspect ratio */
+  height: 350px; 
+  object-fit: cover; 
   display: block;
 }
 
@@ -166,7 +157,6 @@ main {
   opacity: 0.9;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
@@ -175,7 +165,6 @@ footer {
   margin-top: 2rem;
 }
 
-/* Popup background */
 .popup {
   position: fixed;
   top: 0;
@@ -190,7 +179,6 @@ footer {
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Popup content container */
 .popup-content {
   display: flex;
   width: 90%;
@@ -211,7 +199,7 @@ footer {
   height:100%;
 }
 
-/* Close button */
+
 .close-btn {
   position: absolute;
   top: 20px;
@@ -228,10 +216,8 @@ footer {
   color: #c0392b;
 }
 
-/* Iframe container */
 .iframe-container {
   display: flex;
-  /* flex: 1; */
   justify-content: center;
   align-items: center;
   width: 70%;
@@ -247,7 +233,6 @@ footer {
   border: none;
   transition: opacity 0.3s ease;
   border-radius: 20px;
-  /* object-fit: cover; */
 }
 
 #iframe{
@@ -257,19 +242,14 @@ footer {
   object-fit: cover;
 }
 
-/* Right side content */
 .right-container {
   width: 30%;
   height: 100%;
-  /* padding: 10px; */
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   background-color: #f9f9f9;
-  /* border-left: 2px solid #ddd; */
 }
 
-/* Content blocks */
 .top-right-container,
 .bottom-right-container,
 .bottom-container {
@@ -279,21 +259,18 @@ footer {
   border-radius: 10px;
   margin-bottom: 15px;
   text-align: center;
-  /* padding: 10px; */
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Hover effect for content blocks */
 .top-right-container:hover,
 .bottom-right-container:hover,
 .bottom-container:hover {
   background-color: #d5d5d5;
 }
 
-/* Text and styles for content blocks */
 .top-right-container,
 .bottom-right-container {
   height: 30%;
@@ -313,17 +290,12 @@ footer {
   display: block; 
 }
 
-/* If you are using a <video> element instead of iframe */
 .popup .popup-content video {
   width: 80%; 
   height: 100%;
-  /* max-width: 600px;  */
-  /* height: 400px; */
   margin: 0 auto;
   display: block; 
 }
-
-
 
 .right-container .clickable {
   margin-bottom: 10px;

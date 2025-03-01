@@ -1,10 +1,10 @@
-/* Body Styling */
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&display=swap');
+
 body {
     width: 100%;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #ffcf9d, #fde8f5);
@@ -13,7 +13,6 @@ body {
     gap: 5px;
 }
 
-/* Header Styling */
 header {
     width: 100%;
     background-color: #E4B7A0;
@@ -29,7 +28,6 @@ header {
     font-weight: bold;
 }
 
-/* Heading Text Styling */
 header h1 {
     display: inline-block;
     white-space: nowrap;
@@ -39,14 +37,12 @@ header h1 {
     font-size: 2rem;
 }
 
-/* Add the word animation effect */
 header h1 span {
     opacity: 0;
     display: inline-block;
     animation: fadeIn 1s ease-out forwards;
 }
 
-/* Keyframe for fading in each word */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -59,7 +55,6 @@ header h1 span {
     }
 }
 
-/* Delay for each word (stagger effect) */
 header h1 span:nth-child(1) {
     animation-delay: 0s;
 }
@@ -72,9 +67,6 @@ header h1 span:nth-child(3) {
     animation-delay: 0.6s;
 }
 
-
-
-/* Main Section Styling */
 .main {
     display: flex;
     flex-direction: column;
@@ -85,7 +77,6 @@ header h1 span:nth-child(3) {
     padding: 20px;
 }
 
-/* Package Details Styling */
 .package-details {
     display: flex;
     flex-direction: column;
@@ -94,7 +85,6 @@ header h1 span:nth-child(3) {
     width: 100%;
     max-width: 900px;
     background: rgba(255, 195, 157, 0.2);
-    /* Light transparent peach */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(108, 66, 44, 0.2);
@@ -106,7 +96,6 @@ header h1 span:nth-child(3) {
     box-shadow: 0 6px 25px rgba(108, 66, 44, 0.3);
 }
 
-/* Image Styling */
 .Booknow-parentimage {
     display: flex;
     justify-content: center;
@@ -114,13 +103,11 @@ header h1 span:nth-child(3) {
     gap: 30px;
     padding: 10px;
     flex-wrap: wrap;
-    /* Ensure responsiveness */
 }
 
 .Booknow-image {
     width: 45%;
     height: 280px;
-    /* Maintain aspect ratio */
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(108, 66, 44, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -131,10 +118,8 @@ header h1 span:nth-child(3) {
     box-shadow: 0 8px 20px rgba(108, 66, 44, 0.4);
 }
 
-/* Actions Section Styling */
 .actions {
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     gap: 30px;
     width: 100%;
@@ -148,7 +133,6 @@ header h1 span:nth-child(3) {
     font-weight: bold;
     color: white;
     background-color: #ffb38e;
-    /* Warm peach */
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -159,11 +143,9 @@ header h1 span:nth-child(3) {
 .actions .btn:hover {
     transform: translateY(-3px);
     background-color: #d88c68;
-    /* Slightly darker shade */
     box-shadow: 0 8px 20px rgba(168, 108, 76, 0.4);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .Booknow-parentimage {
         flex-direction: column;
@@ -187,7 +169,6 @@ header h1 span:nth-child(3) {
     width: 100%;
     max-width: 900px;
     background: rgba(255, 195, 157, 0.2);
-    /* Light transparent peach */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(108, 66, 44, 0.2);
@@ -209,8 +190,6 @@ header h1 span:nth-child(3) {
     width: 100%;
 }
 
-
-/* General Reset and Styling */
 * {
     margin: 0;
     padding: 0;
@@ -227,7 +206,6 @@ body {
     min-height: 100vh;
 }
 
-/* Container for the form */
 .container {
     background-color: white;
     padding: 30px;
@@ -244,7 +222,6 @@ h1 {
     color: #4a3a2e;
 }
 
-/* Form Group Styling */
 .form-group {
     margin-bottom: 15px;
     text-align: left;
@@ -257,7 +234,6 @@ label {
     margin-bottom: 5px;
 }
 
-/* Input fields */
 input,
 select {
     width: 100%;
@@ -273,7 +249,6 @@ select:focus {
     outline: none;
 }
 
-/* Submit Button */
 .submit-btn {
     background-color: #ffb38e;
     padding: 10px 30px;
@@ -294,7 +269,6 @@ select:focus {
     border-radius: 12px;
     background-color: #d88c68;
     color: white;
-    /* font-size: 17px; */
     padding: 10px 20px;
 }
 
@@ -305,7 +279,6 @@ select:focus {
     gap: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         width: 90%;
@@ -384,7 +357,6 @@ select:focus {
 
 .form {
     padding: 10px 60px;
-    /* width: 100%; */
 }
 
 
@@ -392,14 +364,12 @@ select:focus {
 #decrementBtn {
     padding: 3px 6px;
     border: none;
-    /* background-color: transparent; */
     border-radius: 5px;
     background-color: #ffb38e;
     color: white;
     font-size: 15px;
 }
 
-/* Container for the price section */
 .price-section {
     display: flex;
     flex-direction: column;
@@ -410,10 +380,8 @@ select:focus {
     background-color: rgba(255, 195, 157, 0.1);
     border: 1px solid rgba(255, 179, 142, 0.4);
     border-radius: 10px;
-    /* margin-bottom: 20px; */
 }
 
-/* Each row in the price section */
 .price-row {
     display: flex;
     justify-content: space-between;
@@ -424,7 +392,6 @@ select:focus {
     color: #6c422c;
 }
 
-/* Special styling for the Total Price row */
 .price-row.total {
     font-weight: bold;
     color: green;
@@ -433,13 +400,11 @@ select:focus {
     padding-top: 10px;
 }
 
-/* Price values */
 .price {
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .price-section {
         padding: 15px;
@@ -450,8 +415,6 @@ select:focus {
     }
 }
 
-
-/* Coupons.css */
 .coupon-section {
     padding: 20px;
     background-color: #f9f9f9;
@@ -495,17 +458,13 @@ select:focus {
     color: #666;
 }
 
-
-/* Container for the package details and terms card */
 .package-details-container {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    /* Space between the cards */
     margin: 20px;
 }
 
-/* Style for the Terms and Conditions Card */
 .terms-card {
     flex: 1;
     background-color: #f9f9f9;
@@ -531,11 +490,9 @@ select:focus {
 
 .package-details1 {
     flex: 2;
-    /* Give it more space than the terms card */
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-

@@ -4,17 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "PT Serif", serif;
+  font-family: Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-body {
-  /* background-image: url("./images/WhatsApp\ Image\ 2024-11-23\ at\ 07.10.27_7bf59146.jpg"); */
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 header {
@@ -22,14 +14,11 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  /* height: 5%; */
   background-color: #E4B7A0;
   color: #c47309;
 }
 
 header .logo-container {
-  /* display: flex; */
-  /* align-items: center; */
   gap: 5px;
 }
 
@@ -86,9 +75,6 @@ header .dropdown {
 }
 
 .dropdown-menu {
-  /* position: relative; */
-  /* top: 5%; */
-  /* left: 5%; */
   transform: translateX(70%);
   min-width: 120px;
   color: #c47309;
@@ -253,14 +239,11 @@ footer {
 
 @media (max-width: 768px) {
   header {
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
     position: static;
     top: 1%;
   }
 
   .logo-container {
-    /* flex-direction: column; */
     align-items: center;
     gap: 5px;
   }
@@ -294,7 +277,6 @@ footer {
   }
 
   .Travelling {
-    /* grid-template-columns: 1fr; */
     gap: 15px;
     margin: 50px 2px;
     padding: 10px;
@@ -332,7 +314,6 @@ footer {
   }
 
   .Travelling {
-    /* grid-template-columns: repeat(3, 1fr); */
     gap: 30px;
   }
 
