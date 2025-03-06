@@ -529,3 +529,8 @@ h2 {
         font-size: clamp(18px, 6vw, 35px);
     }
 }
+
+.logButton{
+    background-color: #d78e69;
+    width: 20%;
+}
