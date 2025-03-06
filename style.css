@@ -523,7 +523,7 @@ h2 {
 }
 @media (max-width: 600px) {
     body {
-        padding: 10px;
+        padding: 0px;
     }
     #title {
         font-size: clamp(18px, 6vw, 35px);
