@@ -513,3 +513,19 @@ h2 {
   }
 
 
+  #title {
+    font-size: clamp(20px, 8vw, 40px); 
+    font-weight: bold;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    padding-right: 5px;
+    overflow: hidden;
+}
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    #title {
+        font-size: clamp(18px, 6vw, 35px);
+    }
+}
